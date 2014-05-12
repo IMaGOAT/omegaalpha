@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HAVE OMEGA RUBY AND ALPHA SAPPHIRE BEEN RELEASED YET??????</title>
+
+  <!--<link href='http://fonts.googleapis.com/css?family=Press+Start+2P&subset=latin,greek' rel='stylesheet' type='text/css'>-->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+  <!--<style>
+  h2{
+    font-family: 'Press Start 2P', cursive;
+  }
+  </style>-->
+
+  </head>
+
+  <body>
+
+  <!-- 
+  (big centered text) NO
+
+  (smaller) view countdown
+
+  big: time utc
+  smaller: until November 2014
+
+-->
+
+  <h1><span id="answer"></span></h1>
+  <br>
+  <span id="countdown"></span>  
+
+
+
+  <script>
+  var releasedate = new Date("Nov 01, 2014").getTime();
+  var months, days, hours, minutes, seconds;
+
+  var countdown = document.getElementById("countdown");
+
+  setInterval(function () {
+
+    var current_date = new Date().getTime();
+    var seconds_left = (releasedate - current_date) / 1000;
+
+    months = parseInt(seconds_left / 2592000);
+    seconds_left = seconds_left % 2592000;
+
+    days = parseInt(seconds_left / 86400);
+    seconds_left = seconds_left % 86400;
+     
+    hours = parseInt(seconds_left / 3600);
+    seconds_left = seconds_left % 3600;
+      
+    minutes = parseInt(seconds_left / 60);
+    seconds = parseInt(seconds_left % 60);
+
+    countdown.innerHTML = months + " months " + days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds";
+
+  }, 1000);
+
+  setInterval(function () {
+    var current_date = new Date().getTime();
+    if (current_date >= releasedate){
+      answer.innerHTML = "YES";
+    }
+    else{
+      answer.innerHTML = "NO";
+    }
+
+  }, 1000);
+
+
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+  </body>
+</html>
