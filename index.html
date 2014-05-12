@@ -26,71 +26,60 @@
       font-size: 128px;
     }
     </style>
+
   </head>
 
   <body>
 
-  <!-- 
-  (big centered text) NO
+    <div class="center">
+      <p class="answer-text"><span id="answer"></span></p>
+      <br>
+      <span id="countdown"></span>
+    </div>
 
-  (smaller) view countdown
+    <script>
+    var releasedate = new Date("Nov 01, 2014").getTime();
+    var months, days, hours, minutes, seconds;
 
-  big: time utc
-  smaller: until November 2014
+    var countdown = document.getElementById("countdown");
 
--->
-  <div class="center">
-    <p class="answer-text"><span id="answer"></span></p>
-    <br>
-    <span id="countdown"></span>
-  </div>
+    setInterval(function () {
 
+      var current_date = new Date().getTime();
+      var seconds_left = (releasedate - current_date) / 1000;
 
+      months = parseInt(seconds_left / 2592000);
+      seconds_left = seconds_left % 2592000;
 
-  <script>
-  var releasedate = new Date("Nov 01, 2014").getTime();
-  var months, days, hours, minutes, seconds;
+      days = parseInt(seconds_left / 86400);
+      seconds_left = seconds_left % 86400;
+       
+      hours = parseInt(seconds_left / 3600);
+      seconds_left = seconds_left % 3600;
+        
+      minutes = parseInt(seconds_left / 60);
+      seconds = parseInt(seconds_left % 60);
 
-  var countdown = document.getElementById("countdown");
+      countdown.innerHTML = months + " months " + days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds";
 
-  setInterval(function () {
+    }, 1000);
 
-    var current_date = new Date().getTime();
-    var seconds_left = (releasedate - current_date) / 1000;
+    setInterval(function () {
+      var current_date = new Date().getTime();
+      if (current_date >= releasedate){
+        answer.innerHTML = "YES";
+      }
+      else{
+        answer.innerHTML = "NO";
+      }
 
-    months = parseInt(seconds_left / 2592000);
-    seconds_left = seconds_left % 2592000;
-
-    days = parseInt(seconds_left / 86400);
-    seconds_left = seconds_left % 86400;
-     
-    hours = parseInt(seconds_left / 3600);
-    seconds_left = seconds_left % 3600;
-      
-    minutes = parseInt(seconds_left / 60);
-    seconds = parseInt(seconds_left % 60);
-
-    countdown.innerHTML = months + " months " + days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds";
-
-  }, 1000);
-
-  setInterval(function () {
-    var current_date = new Date().getTime();
-    if (current_date >= releasedate){
-      answer.innerHTML = "YES";
-    }
-    else{
-      answer.innerHTML = "NO";
-    }
-
-  }, 1000);
+    }, 1000);
 
 
-  </script>
+    </script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
   </body>
 </html>
