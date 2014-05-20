@@ -24,18 +24,16 @@
       font-size: 128px;
     }
 
-    .countdown{
-    	opacity: 0;
-    	visibility: hidden;
-    	transition: opacity 0.5s linear 0s;
+    .count{
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.5s linear 0s;
     }
-    .center:hover .countdown{
+    .hovertext:hover + .count{
     	opacity:1;
     	visibility: visible;
     }
-
     </style>
-
   </head>
 
   <body>
@@ -44,7 +42,14 @@
       <p class="answer-text"><span id="answer"></span></p>
       <br>
 
-      <span id="countdown"></span>
+      <div class="hovertext">
+      	<p>view countdown</p>
+      </div>
+
+      <div class="count">
+      	<span id="countdown"></span>
+      </div>
+      
     </div>
 
     <script>
