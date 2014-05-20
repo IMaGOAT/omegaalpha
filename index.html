@@ -10,7 +10,6 @@
 
     <title>HAVE OMEGA RUBY AND ALPHA SAPPHIRE BEEN RELEASED YET?</title>
 
-    <!--<link href='http://fonts.googleapis.com/css?family=Press+Start+2P&subset=latin,greek' rel='stylesheet' type='text/css'>-->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
     <style>
@@ -22,9 +21,18 @@
       top: 20%;
     }
     .answer-text{
-      /*font-family: 'Press Start 2P', cursive;*/
       font-size: 128px;
     }
+    .hover{
+    	opacity: 0;
+    	visibility: hidden;
+    	transition: opacity 0.5s linear 0s;
+    }
+    .hover:hover{
+    	opacity:1;
+    	visibility: visible;
+    }
+
     </style>
 
   </head>
@@ -34,7 +42,10 @@
     <div class="center">
       <p class="answer-text"><span id="answer"></span></p>
       <br>
-      <span id="countdown"></span>
+
+      <div class="hover">
+      	<span id="countdown"></span>
+      </div>
     </div>
 
     <script>
