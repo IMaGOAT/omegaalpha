@@ -29,10 +29,10 @@
     	visibility: hidden;
     	transition: opacity 0.5s linear 0s;
     }
-    .center:hover .countdown{
+    .hover:hover .countdown{
     	opacity:1;
     	visibility: visible;
-    }*/
+    }
 
     </style>
 
@@ -44,7 +44,10 @@
       <p class="answer-text"><span id="answer"></span></p>
       <br>
 
-      <span id="countdown"></span>
+      <div class="hover">
+      	<p>view countdown</p>
+      	<span id="countdown"></span>
+      </div>
     </div>
 
     <script>
