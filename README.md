@@ -1,4 +1,4 @@
-Released in 2002/ 2003 for the Gameboy Advance, Pokemon Ruby and Sapphire begun third generation of the popular Pokemon video game franchise. 
+Released in 2002/ 2003 for the Gameboy Advance, Pokemon Ruby and Sapphire begun the third generation of the popular Pokemon video game franchise. 
 
 Pokemon Omega Ruby and Alpha Sapphire are remakes of these two games, announced in May 2014 for release in November of the same year for the Nintendo 3DS. 
 
